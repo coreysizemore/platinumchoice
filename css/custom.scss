@@ -4,12 +4,289 @@
 /*******************     version 1.0       ********************/
 /**************************************************************/
 
+$blue: #3576b1;
+$green: #97c345;
 
 
+header.home_default_image {
+	background: url('../img/home.jpg') no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
 
+header.page_default_image {
+	background: url('../img/page.jpg') no-repeat;
+	background-size: 100%;
+	background-attachment: fixed;
+}
 
+#nav_bar {
+	#logo_main {
+		img {
+			height: 70px;
+			padding: 15px 0px;
+		}
+	}
+}
 
+a#mobileopen:link,
+a#mobileopen:visited,
+a#searchopen:link,
+a#searchopen:visited {
+	color: $blue;
+}
 
+.breadcrumb_wrapper {
+	span.breadcrumbs {
+		a:link, 
+		a:visited {
+			color: $blue;
+		}
+	}
+}
+
+.content {
+	h1,h3 {
+		color: $blue;
+	}
+	
+	hr.divider {
+		background: $blue;
+	}
+	
+	a:link,
+	a:visited {
+		color: $blue;
+	}
+}
+
+.sidebar {
+	h3 {
+		color: $blue;
+	}
+	
+	a:link,
+	a:visited {
+		color: $blue;
+	}
+}
+
+#home_promises {
+	margin-bottom: 80px;
+	
+	.promise_item {
+		background: #f9f9f9;
+		float: left;
+		margin: 0px 10px;
+		min-height: 200px;
+		padding: 20px;
+		text-align: center;
+		width: calc(20% - 60px);
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		-ms-border-radius: 5px;
+		border-radius: 5px;
+		
+		img.promises_icon {
+			display: block;
+			margin: 0 auto 10px;
+			height: auto;
+			width: 50px;
+		}
+		
+		h2 {
+			color: $blue;
+			font-size: 20px;
+			line-height: 32px;
+		}
+		
+		p {
+			font-size: 14px;
+			line-height: 22px;
+		}
+	}
+}
+
+#home_service_list {
+	.service_item {
+		display: inline-block;
+		padding-right: 40px;
+		width: calc(50% - 40px);
+		
+		ul {
+			margin: 0;
+			padding: 0;
+			
+			li {
+				background: #f9f9f9;
+				cursor: pointer;
+				list-style: none;
+				margin-bottom: 5px;
+				padding: 5px 20px;
+				transition: background .15s linear;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				-ms-border-radius: 5px;
+				border-radius: 5px;
+				
+				a:link,
+				a:visited {
+					display: block;
+				}
+			}
+			
+			li:hover {
+				background: $blue;
+				color: #ffffff;
+				
+				a:link,
+				a:visited {
+					color: #ffffff;
+				}
+			}
+		}
+	}
+}
+
+header.slideshow {
+	.image_slide {
+		
+		&.slide_1 {
+			background: url('../img/home.jpg') no-repeat;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+		
+		&.slide_2 {
+			background: url('../img/home2.jpg') no-repeat;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+		
+		&.slide_3 {
+			background: url('../img/home3.jpg') no-repeat;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+		
+		.caption {
+			a:link,
+			a:visited {
+				background: $blue;
+			}
+		}
+	}
+}
+
+.parallax.parallax_default_image {
+	background: url('../img/parallax.jpg') no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+/* contact page */
+
+.contact-us {
+	&.main {
+		padding-bottom: 0px;
+	}
+}
+
+.form_map_wrapper {
+	background: #f1f1f1;
+	padding: 100px 0px;
+	
+	.form_wrapper {
+		padding: 0px 40px;
+		
+		form {
+			label {
+				color: $blue;
+				display: block;
+				font-size: 14px;
+				margin-bottom: 5px;
+			}
+			
+			input[type="text"],
+			input[type="email"] {
+				border: none;
+				background: #ffffff;
+				color: $blue;
+				display: block;
+				font-size: 14px;
+				margin-bottom: 20px;
+				padding: 10px 10px;
+				width: calc(100% - 20px);
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				-ms-border-radius: 5px;
+				border-radius: 5px;
+			}
+			
+			textarea {
+				border: none;
+				background: #ffffff;
+				color: $blue;
+				display: block;
+				font-size: 14px;
+				height: 100px;
+				margin-bottom: 20px;
+				padding: 10px;
+				width: calc(100% - 20px);
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				-ms-border-radius: 5px;
+				border-radius: 5px;
+			}
+			
+			input[type="submit"] {
+				border: none;
+				background: $blue;
+				color: #ffffff;
+				display: inline-block;
+				font-size: 14px;
+				padding: 10px 20px;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				-ms-border-radius: 5px;
+				border-radius: 5px;
+				-webkit-transition: opacity .15s linear;
+				-moz-transition: opacity .15s linear;
+				-ms-transition: opacity .15s linear;
+				transition: opacity .15s linear;
+				
+				&:hover {
+					opacity: .5;
+				}
+			}
+			
+			.hide {
+				display: none;
+			}
+		}
+	}
+	
+	.map_wrapper {
+		padding: 0px 40px;
+		
+		iframe {
+			height: 450px;
+			overflow: hidden;
+			width: calc(100%);
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			-ms-border-radius: 5px;
+			border-radius: 5px;
+		}
+	}
+}
+
+.edit_button {
+	a:link,
+	a:visited {
+		background: $blue;
+	}
+}
 
 @media (min-width: 980px) and (max-width: 1220px) {
 	
@@ -17,12 +294,97 @@
 	
 @media (min-width: 768px) and (max-width: 979px) {
 	
+	header.home_default_image {
+		background: url('../img/home.jpg') no-repeat;
+		background-size: 100%;
+		background-attachment: fixed;
+	}
+	
+	header.header_page.page_default_image {
+		background: url('../img/page_mobile.jpg') no-repeat;
+		background-size: 100%;
+		background-attachment: fixed;
+	}
+	
+	#home_promises {
+		.promise_item {
+			margin-bottom: 20px;
+			width: calc(50% - 60px);
+		}
+	}
+	
 }
 	
 @media (min-width: 480px) and (max-width: 767px) {
 	
+	header.home_default_image {
+		background: url('../img/home_mobile.jpg') no-repeat;
+		background-size: 100%;
+		background-attachment: fixed;
+	}
+	
+	header.header_page.page_default_image {
+		background: url('../img/page_mobile.jpg') no-repeat;
+		background-size: 100%;
+		background-attachment: fixed;
+	}
+	
+	#home_promises {
+		.promise_item {
+			margin-bottom: 20px;
+			width: calc(50% - 60px);
+		}
+	}
+	
+	#home_service_list {
+		.service_item {
+			width: calc(100% - 40px);
+		}
+	}
+	
+	footer {
+		#logo_footer {
+			img {
+				height: 60px;
+			}
+		}
+	}
+	
 }
 	
 @media (min-width: 0px) and (max-width: 479px) {
+	
+	header.home_default_image {
+		background: url('../img/home_mobile.jpg') no-repeat;
+		background-size: 100%;
+		background-attachment: fixed;
+	}
+	
+	header.header_page.page_default_image {
+		background: url('../img/page_mobile.jpg') no-repeat;
+		background-size: 100%;
+		background-attachment: fixed;
+	}
+	
+	#home_promises {
+		.promise_item {
+			margin-bottom: 20px;
+			width: calc(100% - 60px);
+		}
+	}
+	
+	#home_service_list {
+		.service_item {
+			width: calc(100% - 40px);
+		}
+	}
+	
+	footer {
+		#logo_footer {
+			img {
+				height: 60px;
+			}
+		}
+	}
 	
 }
