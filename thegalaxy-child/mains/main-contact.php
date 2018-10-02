@@ -2,12 +2,36 @@
 	
 	/*
 		@package WordPress
-		@subpackage alderaan
+		@subpackage thegalaxy
 	*/
 	 
 ?>
 
-<div class="main <?php echo basename(get_permalink()); ?> ">
+<?php
+	
+	if( get_field('secondary_navigation') ):
+	
+		if ( has_nav_menu( 'secondary_nav' ) ):
+		
+	    	echo get_template_part( 'navs/nav', 'secondary' );
+	    	    	
+	    endif;
+    
+    endif;
+    
+?>
+
+<?php 
+	
+	if( get_field('display_call_out_boxes') ):
+
+		get_template_part( 'misc/calloutboxes' );
+		
+	endif;
+		
+?>
+
+<div id="main" class="<?php echo basename(get_permalink()); ?> ">
 	
 	<?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb('<div class="container"><div class="row gutters"><div class="col_12"><div class="breadcrumb_wrapper"><span class="breadcrumbs">','</span></div></div></div></div>');} ?>
 
@@ -21,17 +45,47 @@
 						
 					<?php if( get_field('sidebar_selection') == 'right' ): ?>
 						
-						<div class="col_9 first">
+						<div class="col_8">
 								
 							<div class="content">
 					
 								<?php get_template_part( 'loops/loop', 'page' ); ?>
+								
+								<?php
+	
+									if( get_field('gallery') ):
+								
+										get_template_part( 'misc/gallery' );
+										
+									endif;
+										
+								?>
+								
+								<?php 
+									
+									if( get_field('accordion') ):
+								
+										get_template_part( 'misc/accordion' );
+										
+									endif;
+										
+								?>
+								
+								<?php 
+									
+									if( get_field('tabs') ):
+								
+										get_template_part( 'misc/tabs' );
+										
+									endif;
+										
+								?>
 									
 							</div>
 								
 						</div>
 							
-						<div class="col_3 last">
+						<div class="col_4">
 								
 							<?php get_template_part( 'sidebars/sidebar' , 'primary' ); ?>
 								
@@ -47,6 +101,36 @@
 				
 								<?php get_template_part( 'loops/loop', 'page' ); ?>
 								
+								<?php
+	
+									if( get_field('gallery') ):
+								
+										get_template_part( 'misc/gallery' );
+										
+									endif;
+										
+								?>
+								
+								<?php 
+									
+									if( get_field('accordion') ):
+								
+										get_template_part( 'misc/accordion' );
+										
+									endif;
+										
+								?>
+								
+								<?php 
+									
+									if( get_field('tabs') ):
+								
+										get_template_part( 'misc/tabs' );
+										
+									endif;
+										
+								?>
+								
 							</div>
 							
 						</div>
@@ -55,17 +139,47 @@
 					
 					<?php if( get_field('sidebar_selection') == 'left' ): ?>
 					
-						<div class="col_3 first">
+						<div class="col_3">
 								
 							<?php get_template_part( 'sidebars/sidebar' , 'primary' ); ?>
 							
 						</div>
 						
-						<div class="col_9 last">
+						<div class="col_9">
 							
 							<div class="content">
 				
 								<?php get_template_part( 'loops/loop', 'page' ); ?>
+								
+								<?php
+	
+									if( get_field('gallery') ):
+								
+										get_template_part( 'misc/gallery' );
+										
+									endif;
+										
+								?>
+								
+								<?php 
+									
+									if( get_field('accordion') ):
+								
+										get_template_part( 'misc/accordion' );
+										
+									endif;
+										
+								?>
+								
+								<?php 
+									
+									if( get_field('tabs') ):
+								
+										get_template_part( 'misc/tabs' );
+										
+									endif;
+										
+								?>
 								
 							</div>
 							
@@ -80,7 +194,6 @@
 		</div>
 	
 	<?php endif; ?>
-	
 	
 	<div class="form_map_wrapper">
 		
@@ -130,7 +243,6 @@
 		
 	</div>
 	
-	
 	<?php if(is_user_logged_in()):?>
 	
 		<div class="edit_button">
@@ -144,42 +256,7 @@
 </div>
 
 	
-
-<?php if( get_field('parallax_feature')): ?>
-
-	<?php if( get_field('parallax_image') ): ?>
-
-		<div class="parallax parallax-page" data-stellar-background-ratio="0.15" style="background-image: url(<?php the_field('parallax_image'); ?>)">
-	
-			<?php
-		
-				if(get_field('parallax_content'))
-				{
-					echo '<div class="filter">' . get_field('parallax_content') . '</div>';
-				}
-											
-			?>
-	
-		</div>
-	
-	<?php else : ?>
-	
-		<div class="parallax parallax-page parallax_default_image" data-stellar-background-ratio="0.15">
-			
-			<?php
-		
-				if(get_field('parallax_content'))
-				{
-					echo '<div class="filter">' . get_field('parallax_content') . '</div>';
-				}
-											
-			?>
-			
-		</div>
-	
-	<?php endif; ?>
-
-<?php endif; ?>
+<?php get_template_part( 'misc/parallax' ); ?>
 
 <?php
 
