@@ -12,7 +12,7 @@
 						
 						if( get_field('contact_form') ):
 						
-							echo the_field('contact_form');
+							echo do_shortcode('[gravityform id="1" title="false" description="false"]');
 						
 						endif;
 						
